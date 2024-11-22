@@ -58,7 +58,7 @@ public class Socials extends StdLibrary implements SocialsList
 			if(x>=0)
 			{
 				final Social socobj=(Social)CMClass.getCommon("DefaultSocial");
-				final String s=getline.substring(0,x).toUpperCase().trim();
+				final String s=getline.substring(0,x).toUpperCase().replace("\t","");
 				if(s.length()>0)
 				{
 					boolean fail=false;
@@ -86,7 +86,7 @@ public class Socials extends StdLibrary implements SocialsList
 					}
 					if(fail)
 					{
-						Log.errOut("Socials", "Unknown S code: '"+s.charAt(1)+"' in "+getline);
+						Log.errOut("Socials", "Unknown S code: '"+s.charAt(0)+"' in "+getline);
 						continue;
 					}
 				}
